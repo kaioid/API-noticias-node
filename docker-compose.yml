@@ -1,0 +1,24 @@
+services:
+  app:
+    build: .
+    ports:
+      - '3050:3050'
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/db_portal
+      - PORT=3050
+      - NODE_ENV=development
+    volumes:
+      - ./:/usr/src/app
+      - /usr/src/app/node_modules
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:4.2
+    ports:
+      - '27917:27017'
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

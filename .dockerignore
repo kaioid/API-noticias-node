@@ -1,0 +1,16 @@
+node_modules
+dist
+npm-debug.log
+.git
+.vscode
+Dockerfile
+docker-compose.yml
+*.log
+
+controller/
+services/
+repository/
+models/
+infra/
+program.ts
+startUp.ts
